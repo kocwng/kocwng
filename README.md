@@ -28,7 +28,7 @@
 ## ⚙️ GitHub Analytics
 ![Anurag's GitHub stats](https://github-readme-stats-cn7n-kocwng.vercel.app/api?username=kocwng&count_private=true&show_icons=true&theme=chartreuse-dark)
 
-![Top Langs](https://github-readme-stats-cn7n-kocwng.vercel.app/api/top-langs/?username=kocwng&layout=compact&theme=chartreuse-dark)
+![Top Langs](https://github-readme-stats-cn7n-kocwng.vercel.app/api/top-langs/?username=kocwng&size_weight=0.5&count_weight=0.5&layout=compact&theme=chartreuse-dark)
 
 
 <!--
