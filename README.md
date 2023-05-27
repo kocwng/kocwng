@@ -6,6 +6,12 @@
   </p>
 </div>
 
+- 🔭 Currently delving into the fascinating world of Golang.
+- 🌱 Continuously learning and exploring new technologies to stay at the forefront of software development.
+- 📚 When I'm not coding, you'll find me lost in the pages of a thrilling book, expanding my horizons.
+- 💬 Ask me about anything related to science or technology! I'm always happy to share knowledge.
+- 🎉 Fun fact: Bananas contain a natural chemical called dopamine, which can lift your mood and make you feel happy. They are nature's own mood boosters! 🍌😄
+
 ---
 
 ## 🛠️ Tech Stack
@@ -25,10 +31,10 @@
 ## 📫 Get In Touch
 [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ida-kusumawati/)
 
-## ⚙️ GitHub Analytics
+## ⚙️ GitHub Stats
 ![Anurag's GitHub stats](https://github-readme-stats-cn7n-kocwng.vercel.app/api?username=kocwng&count_private=true&show_icons=true&theme=chartreuse-dark)
 
-![Top Langs](https://github-readme-stats-cn7n-kocwng.vercel.app/api/top-langs/?username=kocwng&hide_progress=true&size_weight=0.5&count_weight=0.5&layout=compact&theme=chartreuse-dark)
+![Top Langs](https://github-readme-stats-cn7n-kocwng.vercel.app/api/top-langs/?username=kocwng&size_weight=0.5&count_weight=0.5&layout=compact&theme=chartreuse-dark)
 
 
 <!--
