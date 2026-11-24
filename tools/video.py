@@ -1,13 +1,18 @@
 #!/usr/bin/env python3
-"""Render docs/tape.mp4: the song as a 1280x720 video in the README sticker style.
+"""Render docs/tape.mp4: the song as a video in the README sticker style.
 
-    python3 tools/video.py [docs/tape.mp4] [--config tape.toml]
+    python3 tools/video.py [docs/tape.mp4] [--config tape.toml] [--style player|full]
 
 Needs Pillow and numpy (pip install pillow numpy) and ffmpeg/ffprobe on PATH.
 
-What is in it: the [tape] label in big bobbing letters, the cassette with spinning reels
-(the tape winds from left to right as the song plays), 16 equalizer bars driven by the
-song's spectrum, the banana from assets/banana.png bobbing on the beat (re-render it with
+--style player (default): a slim 1280x320 audio player on the purple deck colour, so it
+reads as a player card in GitHub's light and dark themes. The cassette label ([tape] label,
+side, length) with its two reels spinning (the tape winds from left to right as the song
+plays), 16 equalizer bars driven by the song's spectrum, and a thin progress line. The
+bottom 56 px stay calm because GitHub's own video controls cover them.
+
+--style full: 1280x720. The [tape] label in big bobbing letters, the tilted cassette,
+the equalizer, the banana from assets/banana.png bobbing on the beat (re-render it with
 tools/banana.py after changing the banana in tools/hero.py), a chord card that follows
 docs/chords.json (left out when [chords] mode = "off" or there are no chords), and a
 progress bar with the time.
@@ -46,6 +51,8 @@ MINT, LANGIT, ANGGUR = (61, 220, 151), (76, 201, 240), (123, 92, 255)
 PALETTE = [JERUK, PINK, KUNING, MINT, LANGIT, ANGGUR]
 DOTS = [KUNING, MINT, LANGIT, PINK, JERUK]          # finger dots, as on the music page
 SHADOW = TINTA + (215,)                              # sticker shadow: ink, offset down-right
+PLAYER_SHADOW = TINTA + (90,)                        # on the purple deck the SVGs' ink .35 shows
+STYLES = {'player': (1280, 320), 'full': (1280, 720)}
 ROUND_FONTS = [
     '/System/Library/Fonts/Supplemental/Arial Rounded Bold.ttf',
     '/Library/Fonts/Arial Rounded Bold.ttf',
@@ -276,11 +283,11 @@ def estimate_beat(levels):
 
 # ---------------------------------------------------------------- static layers
 
-def background():
+def background(color=BG, dots=0.07):
     k = 2
-    im = Image.new('RGB', (W * k, H * k), BG)
+    im = Image.new('RGB', (W * k, H * k), color)
     d = ImageDraw.Draw(im)
-    dot = mix(KREM, BG, 0.07)
+    dot = mix(KREM, color, dots)
     for y in range(14, H, 28):
         for x in range(14, W, 28):
             d.ellipse([(x - 2.25) * k, (y - 2.25) * k, (x + 2.25) * k, (y + 2.25) * k], fill=dot)
@@ -367,8 +374,11 @@ class Cassette:
         self.body = pen.done(self.TILT)
         self.x0 = cx - (145 - self.box[0]) * S
         self.y0 = cy - (60 - self.box[1]) * S
+        self.setup_reels()
 
-        # reel: cream wheel, ink hub, four teeth (four-fold symmetric)
+    def setup_reels(self):
+        """Reel: cream wheel, ink hub, four teeth (four-fold symmetric); tape colour."""
+        S = self.S
         rp = Pen(26 * S, 26 * S, S, 13, 13)
         rp.circle(0, 0, 11, KREM)
         rp.circle(0, 0, 4, TINTA)
@@ -412,22 +422,67 @@ class Cassette:
             paste(frame, im, x - im.width / 2, y - im.height / 2)
 
 
+class Deck(Cassette):
+    """Player style: just the cream cassette label from music.svg (units 22..268 x 10..94),
+    flat, with the tape window and its two spinning reels."""
+    TILT = 0.0
+
+    def __init__(self, cfg, x0, y0, S):
+        self.S, t = S, cfg['tape']
+        self.cx, self.cy = x0 + (145 - 22) * S, y0 + (60 - 10) * S
+        box = (16, 4, 278, 104)
+        pen = Pen((box[2] - box[0]) * S, (box[3] - box[1]) * S, S, -box[0], -box[1])
+        pen.rrect(25, 14, 271, 98, 10, PLAYER_SHADOW)
+        pen.rrect(22, 10, 268, 94, 10, KREM)
+        pen.rrect(22, 58, 268, 65, 0, PINK)
+        pen.rrect(22, 69, 268, 76, 0, KUNING)
+        label, size = t['label'], 20.0
+        fw = lambda s, z: font('round', z * 8).getlength(s) / 8
+        while fw(label, size) > 188 and size > 10:
+            size -= .5
+        while fw(label, size) > 188 and len(label) > 1:
+            label = label[:-2].rstrip() + '…'
+        pen.text(36, 27.8 + .36 * size, label, 'round', size, TINTA)
+        side = f"side {t['side']} · {t['length']}" if t['length'] else f"side {t['side']}"
+        pen.text(37, 51, side, 'sans', 11.5, mix(TINTA, KREM, .8))
+        pen.circle(246, 30, 12, PINK)
+        bs = 15.0
+        while fw(t['side'], bs) > 19 and bs > 9:
+            bs -= .5
+        pen.text(246, 30, t['side'], 'round', bs, KREM, anchor='mm')
+        pen.rrect(72, 54, 218, 88, 17, TINTA)
+        pen.rrect(98, 80, 192, 84, 0, mix(LANGIT, TINTA, .55))
+        self.body = pen.done()
+        self.x0, self.y0 = x0 + (box[0] - 22) * S, y0 + (box[1] - 10) * S
+        self.setup_reels()
+
+    def draw(self, frame, t, prog):
+        paste(frame, self.body, self.x0, self.y0)
+        for ux, r, period in ((98, 15 - 3.5 * prog, 2.2), (192, 11.5 + 3.5 * prog, 1.6)):
+            b = self.blob(r)
+            x, y = self.pos(ux, 71, 0)
+            paste(frame, b, x - b.width / 2, y - b.height / 2)
+            im = self.reel(t / period * 360)
+            paste(frame, im, x - im.width / 2, y - im.height / 2)
+
+
 class Equalizer:
-    def __init__(self, cx, floor, n=16, bw=26, gap=9, hmin=26, hmax=168):
+    def __init__(self, cx, floor, n=16, bw=26, gap=9, hmin=26, hmax=168, colors=PALETTE, shadow=SHADOW):
         self.n, self.bw, self.floor, self.hmin, self.hmax = n, bw, floor, hmin, hmax
+        self.colors, self.shadow = colors, shadow
         self.x0 = cx - (n * bw + (n - 1) * gap) / 2
         self.step = bw + gap
         self.cache = {}
 
     def bar(self, i, h):
-        c = i % len(PALETTE)
+        c = i % len(self.colors)
         key = (c, h)
         if key not in self.cache:
             sw, o = 4, 6                         # cream outline, room for the shadow
             pen = Pen(self.bw + 2 * sw + o + 2, h + 2 * sw + o + 2, 1, sw + 1, sw + 1)
             r = self.bw / 2
-            pen.rrect(3, 4, self.bw + 3, h + 4, r, SHADOW)
-            pen.rrect(0, 0, self.bw, h, r, PALETTE[c], KREM, sw)
+            pen.rrect(3, 4, self.bw + 3, h + 4, r, self.shadow)
+            pen.rrect(0, 0, self.bw, h, r, self.colors[c], KREM, sw)
             self.cache[key] = pen.done()
         return self.cache[key]
 
@@ -627,14 +682,73 @@ def encode(frames_fn, n, song, out, seconds, codec, abr, crf, maxrate):
         sys.exit('video.py: ffmpeg failed')
 
 
-def scene(cfg, seconds=None):
-    """Everything that is drawn. Returns (frame(k) -> RGB image, frame count, length, info)."""
+class ThinLine:
+    """Player style: a thin cream progress line, nothing else (GitHub's controls show the time)."""
+
+    def __init__(self, x0, x1, cy, dur, hh=2.5):
+        self.x0, self.x1, self.cy, self.dur, self.hh = x0, x1, cy, dur, hh
+        m = 4
+        track = Pen(x1 - x0 + 2 * m, 2 * hh + 2 * m, 1, m, m + hh)
+        track.rrect(0, -hh, x1 - x0, hh, hh, mix(KREM, ANGGUR, .28))
+        self.track = track.done()
+        fill = Pen(x1 - x0 + 2 * m, 2 * hh + 2 * m, 1, m, m + hh)
+        fill.rrect(0, -hh, x1 - x0, hh, hh, KREM)
+        self.fill, self.m = fill.done(), m
+
+    def static(self, bg):
+        paste(bg, self.track, self.x0 - self.m, self.cy - self.hh - self.m)
+
+    def draw(self, frame, t):
+        p = min(1.0, max(0.0, t / self.dur)) if self.dur else 0
+        w = round(p * (self.x1 - self.x0))
+        if w >= 2 * self.hh:
+            part = self.fill.crop((0, 0, self.m + w, self.fill.height))
+            paste(frame, part, self.x0 - self.m, self.cy - self.hh - self.m)
+
+
+def analyse(cfg, seconds):
     song = cfg['tape']['song_abs']
     x, sr = decode(song)
     dur = len(x) / sr or cfg['tape']['duration']    # decoded length = what the player plays
     length = min(dur, seconds) if seconds else dur
     n = int(math.ceil(length * FPS))
-    levels = spectrum_levels(x, sr, n)
+    return dur, length, n, spectrum_levels(x, sr, n)
+
+
+def scene(cfg, seconds=None, style='player'):
+    """Everything that is drawn. Returns (frame(k) -> RGB image, frame count, length, info)."""
+    global W, H
+    W, H = STYLES[style]
+    dur, length, n, levels = analyse(cfg, seconds)
+    return (player_scene if style == 'player' else full_scene)(cfg, dur, length, n, levels)
+
+
+def player_scene(cfg, dur, length, n, levels):
+    """1280x320 strip on the purple deck colour: cassette label with spinning reels on the
+    left, the equalizer filling the rest. The bottom 56 px stay calm (GitHub's controls)."""
+    # poster frame: bars resting in a gentle hump, handing over to the song within ~1 s
+    rest = 0.1 + 0.16 * np.sin(np.pi * (np.arange(levels.shape[1]) + .5) / levels.shape[1])
+    for k in range(min(n, FPS * 2)):
+        levels[k] = np.maximum(levels[k], rest * math.exp(-k / FPS / .45))
+    bg = background(ANGGUR, 0.1)
+    deck = Deck(cfg, 40, 48, 2.0)
+    eq = Equalizer(910, 216, bw=28, gap=13, hmin=24, hmax=176, colors=DOTS, shadow=PLAYER_SHADOW)
+    line = ThinLine(40, 1240, 290, dur)
+    line.static(bg)
+
+    def frame(k):
+        t = k / FPS
+        fr = bg.copy()
+        deck.draw(fr, t, t / dur)
+        eq.draw(fr, levels[k])
+        line.draw(fr, t)
+        return fr
+
+    return frame, n, length, 'style player'
+
+
+def full_scene(cfg, dur, length, n, levels):
+    """1280x720: title, cassette and equalizer on the left, chord card and banana on the right."""
     # first frames (the poster): show a lively row that fades into the real levels
     peek = levels[min(n - 1, int(1.2 * FPS))]
     for k in range(min(n, FPS)):
@@ -644,7 +758,6 @@ def scene(cfg, seconds=None):
     if not 0.25 < beat < 3:
         beat = estimate_beat(levels)
 
-    # layout (1280x720): left = title, cassette, equalizer; right = chord card, banana
     bg = background()
     title = Title(cfg['tape']['label'], 352, 128, 640)
     cassette = Cassette(cfg, 352, 300)
@@ -670,16 +783,22 @@ def scene(cfg, seconds=None):
         prog.draw(fr, t)
         return fr
 
-    return frame, n, length, f'beat {beat:.2f} s, chords {"on" if card else "off"}'
+    return frame, n, length, f'style full, beat {beat:.2f} s, chords {"on" if card else "off"}'
 
 
 def main():
     argv = sys.argv
-    seconds = None
+    seconds, style = None, 'player'
     if '--seconds' in argv:                   # hidden: render only the first N seconds (tests)
         i = argv.index('--seconds')
         seconds = float(argv[i + 1])
         del argv[i:i + 2]
+    if '--style' in argv:
+        i = argv.index('--style')
+        style = argv[i + 1] if i + 1 < len(argv) else ''
+        del argv[i:i + 2]
+        if style not in STYLES:
+            sys.exit(f'--style must be one of: {", ".join(STYLES)}')
     out, conf = args(os.path.join(ROOT, 'docs', 'tape.mp4'))
     for tool in ('ffmpeg', 'ffprobe'):
         if not shutil.which(tool):
@@ -690,7 +809,7 @@ def main():
         sys.exit(f'video.py: song not found: {song}')
     t0 = time.time()
 
-    frame, n, length, info = scene(cfg, seconds)
+    frame, n, length, info = scene(cfg, seconds, style)
     frames = lambda count: (frame(k) for k in range(count))
     codec, abr = audio_info(song)
     audio_bits = (abr if codec == 'aac' else 160000) * length

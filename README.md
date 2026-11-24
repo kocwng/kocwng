@@ -16,7 +16,7 @@ I like figuring out how the pieces behind an app fit together.
 <!-- tape:start (tools/build.py fills in the link from tape.toml) -->
 <div align="center">
 
-https://github.com/user-attachments/assets/365fcc78-4a11-4cfe-8fb5-61fe5b99e9e0
+https://github.com/user-attachments/assets/17e9bdef-8b03-4fba-96da-b7ac2770f266
 
 <sub>🎧 Press play above, or open the <a href="https://kocwng.github.io/kocwng/">tape player</a>.</sub>
 </div>
