@@ -27,6 +27,30 @@ All the pictures are animated SVG files with no scripts, so GitHub shows them as
 
 7. **Commit.** The **build tape** Action works out the chords, redraws the pictures, and commits them. It takes about a minute. You can watch it in the **Actions** tab.
 
+## Playing the song right on your profile
+
+GitHub won't play an audio file inside a README. It will play a video that was uploaded through its web editor. To get a player on your profile, follow these steps.
+
+1. **Make the video.** It's an MP4 of your song with the cassette, the bars, the banana and the chord card:
+
+   ```bash
+   pip install pillow numpy scipy
+   ```
+
+   ```bash
+   python3 tools/video.py
+   ```
+
+   This writes `docs/tape.mp4`. Git ignores that file, so it doesn't bloat the repo.
+
+2. **Upload it.** On github.com, open `README.md` and click the pencil to edit. Drag `docs/tape.mp4` into the editor. GitHub uploads it and inserts a `https://github.com/user-attachments/assets/...` link.
+
+3. **Save the link.** Copy that link into `video = "..."` in `tape.toml`. Then cancel the edit on github.com instead of committing it there.
+
+4. **Commit `tape.toml`.** The Action puts the player where the cassette was, with a small link to the music page under it.
+
+Visitors still have to press play, because nothing on GitHub autoplays with sound.
+
 ## Chords
 
 When `mode = "auto"`, the chords are detected from the song whenever the song file changes. The detector is simple, so expect a few wrong chords, especially on songs with singing or drums.

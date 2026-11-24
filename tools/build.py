@@ -7,7 +7,8 @@
                        (skipped when the song hasn't changed; needs numpy, scipy, ffmpeg)
 2. assets/hero.svg, assets/music.svg, assets/footer.svg
 3. docs/tape.json    - what the music page reads (label, song file, length, owner)
-4. README.md         - the cassette link between <!-- tape:start --> and <!-- tape:end -->
+4. README.md         - between <!-- tape:start --> and <!-- tape:end -->: the video player
+                       when [tape] video is set, else the cassette picture with its link
 
 The GitHub Action in .github/workflows/tape.yml runs this on every push that changes
 tape.toml or the song, so normally you never have to run it yourself.
@@ -28,6 +29,11 @@ TOOLS = os.path.join(ROOT, 'tools')
 def run(*args):
     print('$', ' '.join(os.path.relpath(a, ROOT) if os.path.isabs(a) else a for a in args), flush=True)
     return subprocess.run([sys.executable, *args], cwd=ROOT).returncode
+
+
+def sentence(s):
+    s = s.strip()
+    return s[:1].upper() + s[1:]
 
 
 def chords_current(song, out):
@@ -80,20 +86,29 @@ def main():
         f.write('\n')
     print('wrote docs/tape.json')
 
-    # 4. cassette link in README.md
+    # 4. the tape block in README.md: the video player if there is one, else the cassette picture
     readme = os.path.join(ROOT, 'README.md')
     with open(readme) as f:
         text = f.read()
-    new = text
-    block = re.compile(r'(<!-- tape:start[^>]*-->.*?<a href=")[^"]*(")', re.S)
-    if block.search(new):
-        new = block.sub(lambda m: m.group(1) + t['link'] + m.group(2), new, count=1)
+    alt_music = sentence(' '.join(t['caption'])).replace('"', '&quot;') + ' Play the recording.'
+    if t['video']:
+        inner = ('<div align="center">\n\n'
+                 f"{t['video']}\n\n"
+                 f"<sub>🎧 Press play above, or open the <a href=\"{t['link']}\">tape player</a>.</sub>\n"
+                 '</div>')
     else:
-        print('README.md: no <!-- tape:start --> block, link left as is')
+        inner = ('<div align="center">\n'
+                 f"<a href=\"{t['link']}\">\n"
+                 f'  <img src="./assets/music.svg" width="100%" alt="{alt_music}" />\n'
+                 '</a>\n'
+                 '</div>')
+    block = re.compile(r'(<!-- tape:start[^>]*-->\n).*?(\n<!-- tape:end -->)', re.S)
+    new = text
+    if block.search(new):
+        new = block.sub(lambda m: m.group(1) + inner + m.group(2), new, count=1)
+    else:
+        print('README.md: no <!-- tape:start --> block, left as is')
     # image descriptions for screen readers, kept in step with the pictures
-    def sentence(s):
-        s = s.strip()
-        return s[:1].upper() + s[1:]
     alts = {
         'hero.svg': sentence(' '.join(cfg['hero']['greeting'])),
         'music.svg': sentence(' '.join(t['caption'])) + ' Play the recording.',
@@ -106,7 +121,7 @@ def main():
     if new != text:
         with open(readme, 'w') as f:
             f.write(new)
-        print(f"README.md: updated (cassette links to {t['link']})")
+        print('README.md: updated (' + ('video player' if t['video'] else f"cassette links to {t['link']}") + ')')
 
     if failed:
         sys.exit('failed to draw: ' + ', '.join(failed))

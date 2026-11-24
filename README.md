@@ -15,9 +15,10 @@ I like figuring out how the pieces behind an app fit together.
 
 <!-- tape:start (tools/build.py fills in the link from tape.toml) -->
 <div align="center">
-<a href="https://kocwng.github.io/kocwng/">
-  <img src="./assets/music.svg" width="100%" alt="Give it a listen! Play the recording." />
-</a>
+
+https://github.com/user-attachments/assets/365fcc78-4a11-4cfe-8fb5-61fe5b99e9e0
+
+<sub>🎧 Press play above, or open the <a href="https://kocwng.github.io/kocwng/">tape player</a>.</sub>
 </div>
 <!-- tape:end -->
 

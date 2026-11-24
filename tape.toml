@@ -18,6 +18,14 @@ caption = ["give it", "a listen!"]
 # Leave it empty to use the music page in docs/ (GitHub Pages),
 # or paste a link to the song somewhere else (SoundCloud, YouTube, ...).
 link = ""
+# A video of the song that plays right on your profile page.
+# (GitHub can't play plain audio in a README, but it can play an uploaded video.)
+#   1. python3 tools/video.py          -> makes docs/tape.mp4
+#   2. On github.com, open README.md, click the pencil to edit, and drag docs/tape.mp4
+#      into the editor. GitHub uploads it and inserts a https://github.com/user-attachments/... link.
+#   3. Copy that link here, then cancel the edit on github.com (don't commit it there).
+# Leave it empty to show the cassette picture instead.
+video = "https://github.com/user-attachments/assets/365fcc78-4a11-4cfe-8fb5-61fe5b99e9e0"
 
 [chords]
 # The banana plays ukulele along with the song, and the music page shows the chords.

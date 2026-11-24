@@ -11,6 +11,7 @@ defaults plus a few derived values, so every generator sees the same thing:
     cfg['tape']['song_abs']   absolute path
     cfg['tape']['song_url']   path relative to docs/, e.g. "music.m4a" (for the page)
     cfg['tape']['label'], ['side'], ['caption'] (list of 2 str), ['link'] (resolved, never empty)
+    cfg['tape']['video']      uploaded video URL (github.com/user-attachments/...) or ''
     cfg['tape']['duration']   float seconds (ffprobe, then macOS afinfo; 0.0 if unknown)
     cfg['tape']['length']     "m:ss" or "" if unknown
     cfg['chords']['mode']     "auto" | "keep" | "off"
@@ -28,7 +29,7 @@ ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)),
 DEFAULTS = {
     'hero': {'greeting': ['hello', 'there!']},
     'tape': {'song': 'docs/music.m4a', 'label': 'my tape', 'side': 'A',
-             'caption': ['give it', 'a listen!'], 'link': ''},
+             'caption': ['give it', 'a listen!'], 'link': '', 'video': ''},
     'chords': {'mode': 'auto'},
     'footer': {'text': 'thanks for stopping by!'},
 }
@@ -98,6 +99,7 @@ def load(path=None):
         f"https://{owner}.github.io/" if repo.lower() == f"{owner}.github.io".lower()
         else f"https://{owner}.github.io/{repo}/")
 
+    t['video'] = str(t['video']).strip()
     mode = str(cfg['chords']['mode']).strip().lower()
     cfg['chords']['mode'] = mode if mode in ('auto', 'keep', 'off') else 'auto'
     cfg['chords']['file'] = os.path.join(ROOT, 'docs', 'chords.json')
