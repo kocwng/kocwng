@@ -45,7 +45,7 @@ https://github.com/user-attachments/assets/f62bed9f-9dad-485a-9299-be28900c66d6
 <!-- pernik:stack -->
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./pernik/stack-dark.svg" />
-  <img src="./pernik/stack-light.svg" width="100%" alt="Tech stack: Go, Python, Rust, Node.js, TypeScript, echo, Gin, fiber, gorm, FastAPI, Flask, Next.js, React" />
+  <img src="./pernik/stack-light.svg" width="100%" alt="Tech stack: Go, Python, Rust, Node.js, TypeScript, echo, Gin, fiber, FastAPI, Flask, Next.js, React" />
 </picture>
 <!-- /pernik:stack -->
 

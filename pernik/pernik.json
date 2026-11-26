@@ -78,10 +78,10 @@
         "dark": "pernik/stack-dark.svg"
       },
       "bytes": {
-        "light": 29152,
-        "dark": 29152
+        "light": 28320,
+        "dark": 28320
       },
-      "alt": "Tech stack: Go, Python, Rust, Node.js, TypeScript, echo, Gin, fiber, gorm, FastAPI, Flask, Next.js, React",
+      "alt": "Tech stack: Go, Python, Rust, Node.js, TypeScript, echo, Gin, fiber, FastAPI, Flask, Next.js, React",
       "href": null,
       "width": "100%",
       "extra": []
@@ -110,8 +110,8 @@
         "dark": "pernik/data-dark.svg"
       },
       "bytes": {
-        "light": 17282,
-        "dark": 17282
+        "light": 18033,
+        "dark": 18033
       },
       "alt": "Tech stack: MySQL, PostgreSQL, MongoDB, Redis, Apache Kafka, vertica, DBeaver",
       "href": null,
