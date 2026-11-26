@@ -36,7 +36,7 @@ note = "things i use"
 [[widget]]
 id = "stack"
 kind = "stack"
-icons = ["go", "python", "rust", "nodejs", "typescript", "echo", "gin", "fiber", "gorm", "fastapi", "flask", "nextdotjs", "react"]
+icons = ["go", "python", "rust", "nodejs", "typescript", "echo", "gin", "fiber", "fastapi", "flask", "nextdotjs", "react"]
 # own logo files (sources and licenses are noted inside each file)
 logos = { echo = "assets/logos/echo.svg", fiber = "assets/logos/fiber.svg" }
 
@@ -49,6 +49,8 @@ text = "data"
 id = "data"
 kind = "stack"
 icons = ["mysql", "postgresql", "mongodb", "redis", "kafka", "vertica", "dbeaver"]
+# own logo file (source and license are noted inside it)
+logos = { vertica = "assets/logos/vertica.svg" }
 
 [[widget]]
 id = "infra-title"
