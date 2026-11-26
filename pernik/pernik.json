@@ -10,8 +10,8 @@
         "dark": "pernik/hello-dark.svg"
       },
       "bytes": {
-        "light": 10582,
-        "dark": 10582
+        "light": 13827,
+        "dark": 13827
       },
       "alt": "hello there! (a banana strums a ukulele)",
       "href": null,
@@ -49,6 +49,7 @@
       "href": "https://kocwng.github.io/kocwng/tape/",
       "width": "100%",
       "extra": [
+        "docs/tape/chords.json",
         "docs/tape/index.html",
         "docs/tape/tape.json"
       ]
