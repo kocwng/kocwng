@@ -1,0 +1,36 @@
+# Edit this to change your widgets; see https://github.com/kocwng/pernik
+schema = 1
+theme = "komik"
+output = "pernik"
+# user = "kocwng"   # found automatically in the GitHub Action
+
+[[widget]]
+id = "hello"
+kind = "hero"
+chords = "docs/tape/chords.json"
+
+[[widget]]
+id = "line"
+kind = "divider"
+style = "kawung"
+
+[[widget]]
+id = "tape"
+kind = "mixtape"
+song = "docs/music.m4a"
+label = "kocwng tape"
+chords = "keep"   # hand-fixed chords in docs/tape/chords.json
+video = "https://github.com/user-attachments/assets/17e9bdef-8b03-4fba-96da-b7ac2770f266"
+
+[[widget]]
+id = "stack-title"
+kind = "heading"
+
+[[widget]]
+id = "stack"
+kind = "stack"
+icons = ["go", "docker", "swagger", "mysql", "aws", "googlecloud", "cloudflare"]
+
+[[widget]]
+id = "bye"
+kind = "footer"

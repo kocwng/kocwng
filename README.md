@@ -1,8 +1,13 @@
+<!-- pernik:hello -->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./pernik/hello-dark.svg" />
+  <img src="./pernik/hello-light.svg" width="100%" alt="hello there! (a banana strums a ukulele)" />
+</picture>
+<!-- /pernik:hello -->
+
 <div align="center">
 
-<img src="./assets/hero.svg" width="100%" alt="Hello there!" />
-
-I'm a science and tech enthusiast getting into software development, mostly backend.<br>
+I'm a science and tech enthusiast getting into software development, mostly backend.  
 I like figuring out how the pieces behind an app fit together.
 
 </div>
@@ -14,29 +19,39 @@ I like figuring out how the pieces behind an app fit together.
 - 💬 Happy to talk about anything science or tech.
 - 🍌 Fun fact: bananas contain dopamine. It just doesn't reach your brain.
 
-<!-- tape:start (tools/build.py fills in the link from tape.toml) -->
+<!-- pernik:line -->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./pernik/line-dark.svg" />
+  <img src="./pernik/line-light.svg" width="100%" alt="Kawung batik divider" />
+</picture>
+<!-- /pernik:line -->
+
+<!-- pernik:tape -->
 <div align="center">
 
 https://github.com/user-attachments/assets/17e9bdef-8b03-4fba-96da-b7ac2770f266
 
-<sub>🎧 Press play above, or open the <a href="https://kocwng.github.io/kocwng/">tape player</a>.</sub>
+<sub>Press play above, or open the <a href="https://kocwng.github.io/kocwng/tape/">tape player</a>.</sub>
 </div>
-<!-- tape:end -->
+<!-- /pernik:tape -->
 
-### 🛠️ Tech Stack
+<!-- pernik:stack-title -->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./pernik/stack-title-dark.svg" />
+  <img src="./pernik/stack-title-light.svg" width="100%" alt="tech stack" />
+</picture>
+<!-- /pernik:stack-title -->
 
-<p>
-  <img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="Go" />
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
-  <img src="https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=black" alt="Swagger" />
-  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL" />
-  <img src="https://img.shields.io/badge/Amazon_AWS-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white" alt="Amazon AWS" />
-  <img src="https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white" alt="Google Cloud" />
-  <img src="https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=cloudflare&logoColor=white" alt="Cloudflare" />
-</p>
+<!-- pernik:stack -->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./pernik/stack-dark.svg" />
+  <img src="./pernik/stack-light.svg" width="100%" alt="Tech stack: Go, Docker, Swagger, MySQL, aws, Google Cloud, Cloudflare" />
+</picture>
+<!-- /pernik:stack -->
 
-<div align="center">
-<img src="./assets/footer.svg" width="100%" alt="Thanks for stopping by!" />
-
-<sub>🎶 Want a tape like this on your profile? <a href="./MAKE-YOUR-OWN.md">Make your own</a>.</sub>
-</div>
+<!-- pernik:bye -->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./pernik/bye-dark.svg" />
+  <img src="./pernik/bye-light.svg" width="100%" alt="thanks for stopping by!" />
+</picture>
+<!-- /pernik:bye -->
