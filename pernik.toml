@@ -36,6 +36,7 @@ note = "things i use"
 [[widget]]
 id = "stack"
 kind = "stack"
+density = "compact"
 icons = ["go", "python", "rust", "nodejs", "typescript", "echo", "gin", "fiber", "fastapi", "flask", "nextdotjs", "react"]
 # own logo files (sources and licenses are noted inside each file)
 logos = { echo = "assets/logos/echo.svg", fiber = "assets/logos/fiber.svg" }
@@ -48,6 +49,7 @@ text = "data"
 [[widget]]
 id = "data"
 kind = "stack"
+density = "compact"
 icons = ["mysql", "postgresql", "mongodb", "redis", "kafka", "vertica", "dbeaver"]
 # own logo file (source and license are noted inside it)
 logos = { vertica = "assets/logos/vertica.svg" }
@@ -60,6 +62,7 @@ text = "infra & tools"
 [[widget]]
 id = "infra"
 kind = "stack"
+density = "compact"
 icons = ["docker", "kubernetes", "linux", "aws", "googlecloud", "cloudflare", "grafana", "uptimerobot", "git", "postman", "swagger", "termius"]
 # own logo files (sources and licenses are noted inside each file)
 logos = { aws = "assets/logos/aws.svg", uptimerobot = "assets/logos/uptimerobot.svg" }
@@ -72,6 +75,7 @@ text = "ai & editors"
 [[widget]]
 id = "ai"
 kind = "stack"
+density = "compact"
 icons = ["claude", "codex", "grok", "deepseek", "aws bedrock", "ibm watson", "vscode", "antigravity", "kiro"]
 # own logo files (sources and licenses are noted inside each file)
 logos = { codex = "assets/logos/codex.svg", grok = "assets/logos/grok.svg", "aws bedrock" = "assets/logos/aws-bedrock.svg", "ibm watson" = "assets/logos/ibm-watson.svg", vscode = "assets/logos/vscode.svg", antigravity = "assets/logos/antigravity.svg", kiro = "assets/logos/kiro.svg" }
