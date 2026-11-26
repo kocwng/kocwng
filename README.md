@@ -22,17 +22,17 @@ I like figuring out how the pieces behind an app fit together.
 <!-- pernik:line -->
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./pernik/line-dark.svg" />
-  <img src="./pernik/line-light.svg" width="100%" alt="Kawung batik divider" />
+  <img src="./pernik/line-light.svg" width="100%" alt="Truntum batik divider" />
 </picture>
 <!-- /pernik:line -->
 
 <!-- pernik:tape -->
-<div align="center">
-
-https://github.com/user-attachments/assets/d38fa507-3905-4edf-981b-37a2c2ed9161
-
-<sub>Press play above, or open the <a href="https://kocwng.github.io/kocwng/tape/">tape player</a>.</sub>
-</div>
+<a href="https://kocwng.github.io/kocwng/tape/">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./pernik/tape-dark.svg" />
+  <img src="./pernik/tape-light.svg" width="100%" alt="Give it a listen! Play the recording." />
+</picture>
+</a>
 <!-- /pernik:tape -->
 
 <!-- pernik:stack-title -->
@@ -52,6 +52,6 @@ https://github.com/user-attachments/assets/d38fa507-3905-4edf-981b-37a2c2ed9161
 <!-- pernik:bye -->
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./pernik/bye-dark.svg" />
-  <img src="./pernik/bye-light.svg" width="100%" alt="thanks for stopping by!" />
+  <img src="./pernik/bye-light.svg" width="100%" alt="thanks for stopping by! reach me at 💌idakusumaconnect@gmail.com" />
 </picture>
 <!-- /pernik:bye -->

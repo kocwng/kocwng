@@ -8,23 +8,29 @@ output = "pernik"
 id = "hello"
 kind = "hero"
 chords = "docs/tape/chords.json"
+tagline = "don't touch prod on friday."
+hp = [7, 7]
+exp = 1
+exp_label = "love"
 
 [[widget]]
 id = "line"
 kind = "divider"
-style = "kawung"
+style = "truntum"
 
 [[widget]]
 id = "tape"
 kind = "mixtape"
 song = "docs/music.m4a"
-label = "kocwng tape"
-chords = "keep"   # hand-fixed chords in docs/tape/chords.json
-video = "auto"   # the Action uploads the video (needs the PERNIK_TOKEN secret)
+label = "kocwng tape~"
+chords = "keep"   # use the hand-fixed chords in docs/tape/chords.json
+video = "auto"
+make_video = true
 
 [[widget]]
 id = "stack-title"
 kind = "heading"
+note = "things i use"
 
 [[widget]]
 id = "stack"
@@ -34,3 +40,4 @@ icons = ["go", "docker", "swagger", "mysql", "aws", "googlecloud", "cloudflare"]
 [[widget]]
 id = "bye"
 kind = "footer"
+text = "thanks for stopping by! reach me at 💌idakusumaconnect@gmail.com"

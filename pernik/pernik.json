@@ -10,8 +10,8 @@
         "dark": "pernik/hello-dark.svg"
       },
       "bytes": {
-        "light": 13827,
-        "dark": 13827
+        "light": 11901,
+        "dark": 11901
       },
       "alt": "hello there! (a banana strums a ukulele)",
       "href": null,
@@ -26,10 +26,10 @@
         "dark": "pernik/line-dark.svg"
       },
       "bytes": {
-        "light": 7631,
-        "dark": 7631
+        "light": 11551,
+        "dark": 11551
       },
-      "alt": "Kawung batik divider",
+      "alt": "Truntum batik divider",
       "href": null,
       "width": "100%",
       "extra": []
@@ -42,14 +42,13 @@
         "dark": "pernik/tape-dark.svg"
       },
       "bytes": {
-        "light": 7892,
-        "dark": 7892
+        "light": 7899,
+        "dark": 7899
       },
       "alt": "Give it a listen! Play the recording.",
       "href": "https://kocwng.github.io/kocwng/tape/",
       "width": "100%",
       "extra": [
-        "docs/tape/chords.json",
         "docs/tape/index.html",
         "docs/tape/tape.json"
       ]
@@ -62,8 +61,8 @@
         "dark": "pernik/stack-title-dark.svg"
       },
       "bytes": {
-        "light": 2577,
-        "dark": 2577
+        "light": 2696,
+        "dark": 2696
       },
       "alt": "tech stack",
       "href": null,
@@ -94,10 +93,10 @@
         "dark": "pernik/bye-dark.svg"
       },
       "bytes": {
-        "light": 3283,
-        "dark": 3283
+        "light": 3412,
+        "dark": 3412
       },
-      "alt": "thanks for stopping by!",
+      "alt": "thanks for stopping by! reach me at \ud83d\udc8cidakusumaconnect@gmail.com",
       "href": null,
       "width": "100%",
       "extra": []
