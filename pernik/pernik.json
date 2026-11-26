@@ -78,8 +78,8 @@
         "dark": "pernik/stack-dark.svg"
       },
       "bytes": {
-        "light": 27775,
-        "dark": 27775
+        "light": 29152,
+        "dark": 29152
       },
       "alt": "Tech stack: Go, Python, Rust, Node.js, TypeScript, echo, Gin, fiber, gorm, FastAPI, Flask, Next.js, React",
       "href": null,
@@ -142,8 +142,8 @@
         "dark": "pernik/infra-dark.svg"
       },
       "bytes": {
-        "light": 25913,
-        "dark": 25913
+        "light": 28013,
+        "dark": 28013
       },
       "alt": "Tech stack: Docker, Kubernetes, Linux, aws, Google Cloud, Cloudflare, Grafana, uptimerobot, Git, Postman, Swagger, Termius",
       "href": null,
@@ -174,8 +174,8 @@
         "dark": "pernik/ai-dark.svg"
       },
       "bytes": {
-        "light": 12754,
-        "dark": 12754
+        "light": 18069,
+        "dark": 18069
       },
       "alt": "Tech stack: Claude, codex, grok, DeepSeek, aws bedrock, ibm watson, vscode, antigravity, kiro",
       "href": null,
