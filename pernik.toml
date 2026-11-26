@@ -27,57 +27,35 @@ chords = "keep"   # use the hand-fixed chords in docs/tape/chords.json
 video = "auto"
 make_video = true
 
+# tech stack as a garden: one tree per group, the tools are the fruit
 [[widget]]
-id = "stack-title"
-kind = "heading"
-text = "languages & frameworks"
-note = "things i use"
+id = "kebun"
+kind = "garden"
+harvest = true
+mascot = "banana"
 
-[[widget]]
-id = "stack"
-kind = "stack"
-density = "compact"
+[[widget.tree]]
+name = "languages & frameworks"
+tree = "mangga"
 icons = ["go", "python", "rust", "nodejs", "typescript", "echo", "gin", "fiber", "fastapi", "flask", "nextdotjs", "react"]
-# own logo files (sources and licenses are noted inside each file)
 logos = { echo = "assets/logos/echo.svg", fiber = "assets/logos/fiber.svg" }
 
-[[widget]]
-id = "data-title"
-kind = "heading"
-text = "data"
-
-[[widget]]
-id = "data"
-kind = "stack"
-density = "compact"
+[[widget.tree]]
+name = "data"
+tree = "kelapa"
 icons = ["mysql", "postgresql", "mongodb", "redis", "kafka", "vertica", "dbeaver"]
-# own logo file (source and license are noted inside it)
 logos = { vertica = "assets/logos/vertica.svg" }
 
-[[widget]]
-id = "infra-title"
-kind = "heading"
-text = "infra & tools"
-
-[[widget]]
-id = "infra"
-kind = "stack"
-density = "compact"
+[[widget.tree]]
+name = "infra & tools"
+tree = "rambutan"
 icons = ["docker", "kubernetes", "linux", "aws", "googlecloud", "cloudflare", "grafana", "uptimerobot", "git", "postman", "swagger", "termius"]
-# own logo files (sources and licenses are noted inside each file)
 logos = { aws = "assets/logos/aws.svg", uptimerobot = "assets/logos/uptimerobot.svg" }
 
-[[widget]]
-id = "ai-title"
-kind = "heading"
-text = "ai & editors"
-
-[[widget]]
-id = "ai"
-kind = "stack"
-density = "compact"
+[[widget.tree]]
+name = "ai & editors"
+tree = "pisang"
 icons = ["claude", "codex", "grok", "deepseek", "aws bedrock", "ibm watson", "vscode", "antigravity", "kiro"]
-# own logo files (sources and licenses are noted inside each file)
 logos = { codex = "assets/logos/codex.svg", grok = "assets/logos/grok.svg", "aws bedrock" = "assets/logos/aws-bedrock.svg", "ibm watson" = "assets/logos/ibm-watson.svg", vscode = "assets/logos/vscode.svg", antigravity = "assets/logos/antigravity.svg", kiro = "assets/logos/kiro.svg" }
 
 [[widget]]

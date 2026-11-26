@@ -35,61 +35,8 @@ https://github.com/user-attachments/assets/f62bed9f-9dad-485a-9299-be28900c66d6
 </div>
 <!-- /pernik:tape -->
 
-<!-- pernik:stack-title -->
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./pernik/stack-title-dark.svg" />
-  <img src="./pernik/stack-title-light.svg" width="100%" alt="languages &amp; frameworks" />
-</picture>
-<!-- /pernik:stack-title -->
-
-<!-- pernik:stack -->
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./pernik/stack-dark.svg" />
-  <img src="./pernik/stack-light.svg" width="100%" alt="Tech stack: Go, Python, Rust, Node.js, TypeScript, echo, Gin, fiber, FastAPI, Flask, Next.js, React" />
-</picture>
-<!-- /pernik:stack -->
-
-<!-- pernik:data-title -->
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./pernik/data-title-dark.svg" />
-  <img src="./pernik/data-title-light.svg" width="100%" alt="data" />
-</picture>
-<!-- /pernik:data-title -->
-
-<!-- pernik:data -->
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./pernik/data-dark.svg" />
-  <img src="./pernik/data-light.svg" width="100%" alt="Tech stack: MySQL, PostgreSQL, MongoDB, Redis, Apache Kafka, vertica, DBeaver" />
-</picture>
-<!-- /pernik:data -->
-
-<!-- pernik:infra-title -->
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./pernik/infra-title-dark.svg" />
-  <img src="./pernik/infra-title-light.svg" width="100%" alt="infra &amp; tools" />
-</picture>
-<!-- /pernik:infra-title -->
-
-<!-- pernik:infra -->
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./pernik/infra-dark.svg" />
-  <img src="./pernik/infra-light.svg" width="100%" alt="Tech stack: Docker, Kubernetes, Linux, aws, Google Cloud, Cloudflare, Grafana, uptimerobot, Git, Postman, Swagger, Termius" />
-</picture>
-<!-- /pernik:infra -->
-
-<!-- pernik:ai-title -->
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./pernik/ai-title-dark.svg" />
-  <img src="./pernik/ai-title-light.svg" width="100%" alt="ai &amp; editors" />
-</picture>
-<!-- /pernik:ai-title -->
-
-<!-- pernik:ai -->
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./pernik/ai-dark.svg" />
-  <img src="./pernik/ai-light.svg" width="100%" alt="Tech stack: Claude, codex, grok, DeepSeek, aws bedrock, ibm watson, vscode, antigravity, kiro" />
-</picture>
-<!-- /pernik:ai -->
+<!-- pernik:kebun -->
+<!-- /pernik:kebun -->
 
 <!-- pernik:bye -->
 <picture>
