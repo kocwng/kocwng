@@ -27,12 +27,12 @@ I like figuring out how the pieces behind an app fit together.
 <!-- /pernik:line -->
 
 <!-- pernik:tape -->
-<a href="https://kocwng.github.io/kocwng/tape/">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./pernik/tape-dark.svg" />
-  <img src="./pernik/tape-light.svg" width="100%" alt="Give it a listen! Play the recording." />
-</picture>
-</a>
+<div align="center">
+
+https://github.com/user-attachments/assets/f62bed9f-9dad-485a-9299-be28900c66d6
+
+<sub>Press play above, or open the <a href="https://kocwng.github.io/kocwng/tape/">tape player</a>.</sub>
+</div>
 <!-- /pernik:tape -->
 
 <!-- pernik:stack-title -->
