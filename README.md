@@ -36,6 +36,10 @@ https://github.com/user-attachments/assets/f62bed9f-9dad-485a-9299-be28900c66d6
 <!-- /pernik:tape -->
 
 <!-- pernik:kebun -->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./pernik/kebun-dark.svg" />
+  <img src="./pernik/kebun-light.svg" width="100%" alt="Tech stack garden: languages &amp; frameworks (mango tree): Go, Python, Rust, Node.js, TypeScript, echo, Gin, fiber, FastAPI, Flask, Next.js, React; data (coconut palm): MySQL, PostgreSQL, MongoDB, Redis, Apache Kafka, vertica, DBeaver; infra &amp; tools (rambutan tree): Docker, Kubernetes, Linux, aws, Google Cloud, Cloudflare, Grafana, uptimerobot, Git, Postman, Swagger, Termius; ai &amp; editors (banana plant): Claude, codex, grok, DeepSeek, aws bedrock, ibm watson, vscode, antigravity, kiro" />
+</picture>
 <!-- /pernik:kebun -->
 
 <!-- pernik:bye -->

@@ -55,129 +55,17 @@
       ]
     },
     {
-      "id": "stack-title",
-      "kind": "heading",
+      "id": "kebun",
+      "kind": "garden",
       "files": {
-        "light": "pernik/stack-title-light.svg",
-        "dark": "pernik/stack-title-dark.svg"
+        "light": "pernik/kebun-light.svg",
+        "dark": "pernik/kebun-dark.svg"
       },
       "bytes": {
-        "light": 2744,
-        "dark": 2744
+        "light": 79713,
+        "dark": 79658
       },
-      "alt": "languages & frameworks",
-      "href": null,
-      "width": "100%",
-      "extra": []
-    },
-    {
-      "id": "stack",
-      "kind": "stack",
-      "files": {
-        "light": "pernik/stack-light.svg",
-        "dark": "pernik/stack-dark.svg"
-      },
-      "bytes": {
-        "light": 23946,
-        "dark": 23946
-      },
-      "alt": "Tech stack: Go, Python, Rust, Node.js, TypeScript, echo, Gin, fiber, FastAPI, Flask, Next.js, React",
-      "href": null,
-      "width": "100%",
-      "extra": []
-    },
-    {
-      "id": "data-title",
-      "kind": "heading",
-      "files": {
-        "light": "pernik/data-title-light.svg",
-        "dark": "pernik/data-title-dark.svg"
-      },
-      "bytes": {
-        "light": 2558,
-        "dark": 2558
-      },
-      "alt": "data",
-      "href": null,
-      "width": "100%",
-      "extra": []
-    },
-    {
-      "id": "data",
-      "kind": "stack",
-      "files": {
-        "light": "pernik/data-light.svg",
-        "dark": "pernik/data-dark.svg"
-      },
-      "bytes": {
-        "light": 15138,
-        "dark": 15138
-      },
-      "alt": "Tech stack: MySQL, PostgreSQL, MongoDB, Redis, Apache Kafka, vertica, DBeaver",
-      "href": null,
-      "width": "100%",
-      "extra": []
-    },
-    {
-      "id": "infra-title",
-      "kind": "heading",
-      "files": {
-        "light": "pernik/infra-title-light.svg",
-        "dark": "pernik/infra-title-dark.svg"
-      },
-      "bytes": {
-        "light": 2598,
-        "dark": 2598
-      },
-      "alt": "infra & tools",
-      "href": null,
-      "width": "100%",
-      "extra": []
-    },
-    {
-      "id": "infra",
-      "kind": "stack",
-      "files": {
-        "light": "pernik/infra-light.svg",
-        "dark": "pernik/infra-dark.svg"
-      },
-      "bytes": {
-        "light": 23692,
-        "dark": 23692
-      },
-      "alt": "Tech stack: Docker, Kubernetes, Linux, aws, Google Cloud, Cloudflare, Grafana, uptimerobot, Git, Postman, Swagger, Termius",
-      "href": null,
-      "width": "100%",
-      "extra": []
-    },
-    {
-      "id": "ai-title",
-      "kind": "heading",
-      "files": {
-        "light": "pernik/ai-title-light.svg",
-        "dark": "pernik/ai-title-dark.svg"
-      },
-      "bytes": {
-        "light": 2595,
-        "dark": 2595
-      },
-      "alt": "ai & editors",
-      "href": null,
-      "width": "100%",
-      "extra": []
-    },
-    {
-      "id": "ai",
-      "kind": "stack",
-      "files": {
-        "light": "pernik/ai-light.svg",
-        "dark": "pernik/ai-dark.svg"
-      },
-      "bytes": {
-        "light": 14646,
-        "dark": 14646
-      },
-      "alt": "Tech stack: Claude, codex, grok, DeepSeek, aws bedrock, ibm watson, vscode, antigravity, kiro",
+      "alt": "Tech stack garden: languages & frameworks (mango tree): Go, Python, Rust, Node.js, TypeScript, echo, Gin, fiber, FastAPI, Flask, Next.js, React; data (coconut palm): MySQL, PostgreSQL, MongoDB, Redis, Apache Kafka, vertica, DBeaver; infra & tools (rambutan tree): Docker, Kubernetes, Linux, aws, Google Cloud, Cloudflare, Grafana, uptimerobot, Git, Postman, Swagger, Termius; ai & editors (banana plant): Claude, codex, grok, DeepSeek, aws bedrock, ibm watson, vscode, antigravity, kiro",
       "href": null,
       "width": "100%",
       "extra": []
