@@ -49,6 +49,24 @@ https://github.com/user-attachments/assets/f62bed9f-9dad-485a-9299-be28900c66d6
 </picture>
 <!-- /pernik:stack -->
 
+<!-- pernik:data-title -->
+<!-- /pernik:data-title -->
+
+<!-- pernik:data -->
+<!-- /pernik:data -->
+
+<!-- pernik:infra-title -->
+<!-- /pernik:infra-title -->
+
+<!-- pernik:infra -->
+<!-- /pernik:infra -->
+
+<!-- pernik:ai-title -->
+<!-- /pernik:ai-title -->
+
+<!-- pernik:ai -->
+<!-- /pernik:ai -->
+
 <!-- pernik:bye -->
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./pernik/bye-dark.svg" />

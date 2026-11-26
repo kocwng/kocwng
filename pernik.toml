@@ -30,12 +30,43 @@ make_video = true
 [[widget]]
 id = "stack-title"
 kind = "heading"
+text = "languages & frameworks"
 note = "things i use"
 
 [[widget]]
 id = "stack"
 kind = "stack"
-icons = ["go", "docker", "swagger", "mysql", "aws", "googlecloud", "cloudflare"]
+icons = ["go", "python", "rust", "nodejs", "typescript", "echo", "gin", "fiber", "gorm", "fastapi", "flask", "nextdotjs", "react"]
+
+[[widget]]
+id = "data-title"
+kind = "heading"
+text = "data"
+
+[[widget]]
+id = "data"
+kind = "stack"
+icons = ["mysql", "postgresql", "mongodb", "redis", "kafka", "vertica", "dbeaver"]
+
+[[widget]]
+id = "infra-title"
+kind = "heading"
+text = "infra & tools"
+
+[[widget]]
+id = "infra"
+kind = "stack"
+icons = ["docker", "kubernetes", "linux", "aws", "googlecloud", "cloudflare", "grafana", "uptimerobot", "git", "postman", "swagger", "termius"]
+
+[[widget]]
+id = "ai-title"
+kind = "heading"
+text = "ai & editors"
+
+[[widget]]
+id = "ai"
+kind = "stack"
+icons = ["claude", "codex", "grok", "deepseek", "aws bedrock", "ibm watson", "vscode", "antigravity", "kiro"]
 
 [[widget]]
 id = "bye"
