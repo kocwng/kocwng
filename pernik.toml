@@ -20,7 +20,7 @@ kind = "mixtape"
 song = "docs/music.m4a"
 label = "kocwng tape"
 chords = "keep"   # hand-fixed chords in docs/tape/chords.json
-video = "https://github.com/user-attachments/assets/17e9bdef-8b03-4fba-96da-b7ac2770f266"
+video = "auto"   # the Action uploads the video (needs the PERNIK_TOKEN secret)
 
 [[widget]]
 id = "stack-title"

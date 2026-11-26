@@ -29,7 +29,7 @@ I like figuring out how the pieces behind an app fit together.
 <!-- pernik:tape -->
 <div align="center">
 
-https://github.com/user-attachments/assets/17e9bdef-8b03-4fba-96da-b7ac2770f266
+https://github.com/user-attachments/assets/e6eba092-a077-4476-b1d2-bf60a02fb22b
 
 <sub>Press play above, or open the <a href="https://kocwng.github.io/kocwng/tape/">tape player</a>.</sub>
 </div>
