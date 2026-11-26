@@ -9,6 +9,7 @@ I like figuring out how the pieces behind an app fit together.
 
 - 🔭 Learning Go right now.
 - 🌱 Always picking up new tools along the way.
+- 🧩 Made [Pernik](https://github.com/kocwng/pernik), comic-style widgets for profile READMEs. [Try it in the playground](https://kocwng.github.io/pernik/).
 - 📚 Usually reading when I'm not coding.
 - 💬 Happy to talk about anything science or tech.
 - 🍌 Fun fact: bananas contain dopamine. It just doesn't reach your brain.
